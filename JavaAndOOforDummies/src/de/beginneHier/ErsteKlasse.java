@@ -90,14 +90,50 @@ public class ErsteKlasse {
 		// Schau dir die Klasse StandardWerft an und komm dann hier her
 		// zurück..
 
-		// Jetzt können wir uns endlich ein Schiff bauen! Und das mit nur 12
+		// Jetzt können wir uns endlich ein Schiff bauen! Und das mit nur 150
 		// Geld...
-		meinSchiff = werft.baueSchiff(12);
+		meinSchiff = werft.baueSchiff(150);
+		// Zur Erinnerung: Das interface Werft versichert uns, dass mit der
+		// StandartWerft auch wirklich ein Schiff gebaut werden kann, d.h. dass
+		// die Methode "baueSchiff(int geld)" auch wirklich existiert.
 
 		// Uns könnte nun interessieren, welche Farbe unser neues Schiff hat
-		System.out.println(meinSchiff.getFarbe());
-		// das "System.out.println()" gibt einen beliebigen String auf der
-		// Konsole aus. In unserem Fall "rot"
+		System.out.println("Mein erstes Schiff hat die Farbe "
+				+ meinSchiff.getFarbe());
+		// das "System.out.println(String s)" gibt einen beliebigen String auf
+		// der Konsole aus. In unserem Fall
+		// "Mein erstes Schiff hat die Farbe rot"
+
+		// Jetzt wollen wir eine etwas ausgereiftere Werft. Da bekommt man auch
+		// noch Segelschiffe, welche ja bekanntlich teurer sind als Motorboote.
+		// Dafür erstellen wir jetzt noch eine Klasse Segelschiff. Schau sie dir
+		// an...
+
+		// Und jetzt bauen wir unsere neue Werft
+		Werft ausgereiftereWerft = new SegelUndMotorSchiffWerft();
+
+		// Wir haben noch etwas geld und bauen uns ein Schiff..
+		Schiff meinZweitesSchiff = ausgereiftereWerft.baueSchiff(180);
+
+		// Nach diesem Schiff bleibt nicht mehr so viel Geld übrig..
+		Schiff meinDrittesSchiff = ausgereiftereWerft.baueSchiff(50);
+
+		// Die folgenden Ausgaben sollten nun nicht mehr erstaunen (hoffe ich):
+		System.out.println("Mein zweites Schiff hat die Farbe "
+				+ meinZweitesSchiff.getFarbe()); // grün
+		System.out.println("Mein drittes Schiff hat die Farbe "
+				+ meinDrittesSchiff.getFarbe()); // rot
+
+		// Was wir hier erarbeitet haben ist ein kleines Beispiel des
+		// sogenannten Factory method pattern.
+		// Zitat Wikipedia:
+		// "Entwurfsmuster (englisch design patterns) sind
+		// bewährte Lösungsschablonen für wiederkehrende Entwurfsprobleme sowohl
+		// in der Architektur als auch in der Softwarearchitektur und
+		// -entwicklung."
+		// Die meisten Patterns werden erst in einer objektorientierten Sprache
+		// möglich und bilden, meiner Meinung nach, den Hauptvorteil einer
+		// ebensolchen.
 	}
 
 }

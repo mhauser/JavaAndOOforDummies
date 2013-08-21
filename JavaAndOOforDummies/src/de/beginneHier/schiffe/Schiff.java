@@ -10,8 +10,9 @@ package de.beginneHier.schiffe;
 public interface Schiff {
 
 	/**
-	 * Abfragemethoden für Eigenschaften (Felder einer Klasse) werden getter
-	 * genannt. Der Name der Methode wiederum wird standardmässig so gebildet:<br>
+	 * Abfragemethoden für Eigenschaften (Felder oder Instanzvariablen) einer
+	 * Klasse werden getter genannt. Der Name der Methode wiederum wird
+	 * standardmässig so gebildet:<br>
 	 * "get"+nameDesFeldes<br>
 	 * bzw. für Wahrheitswerte (boolean):<br>
 	 * "is"+nameDesFeldes [z.B. isValid]
